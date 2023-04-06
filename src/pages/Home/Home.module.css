@@ -1,0 +1,84 @@
+.wrapper {
+  background: var(--white-color);
+  width: 100%;
+  height: 90vh;
+}
+
+.body {
+  height: calc(100% - var(--header-height));
+  position: relative;
+  display: flex;
+}
+
+.bodyLeft {
+  max-width: 300px;
+  list-style: none;
+  background: var(--primary-color);
+  height: 100%;
+}
+
+.leftItem {
+  padding: 12px 20px;
+}
+
+.leftItem.active {
+  background: var(--white-color);
+}
+
+.leftItemTitle {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.leftItemText {
+  color: var(--gray-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.3rem;
+}
+
+.btnAddNote {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white-color);
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all ease 0.25s;
+}
+
+.btnAddNote:hover {
+  transform: scale(1.05);
+}
+
+.btnAddNote:hover .btnAddNoteIcon i {
+  transform: rotate(450deg);
+}
+
+.btnAddNoteIcon {
+  font-size: 2.8rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.btnAddNoteIcon i {
+  transition: all ease 0.5s;
+}
+
+.btnAddNoteText {
+  margin-left: 8px;
+}
