@@ -21,7 +21,11 @@ function Header() {
         </div>
       </div>
       <div className={styles.search}>
-        <input type='text' placeholder='Search' className={styles.searchInp} />
+        <input
+          type='text'
+          placeholder='Search (only UI)'
+          className={styles.searchInp}
+        />
       </div>
       <div className={styles.headerRight}>
         {user && (

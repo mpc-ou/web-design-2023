@@ -9,33 +9,38 @@ import { privateRouter, publicRouter } from './routes';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useEffect } from 'react';
 import UserProvider from './store/UserContext';
+import NoteProvider from './store/NoteContext';
 
 function App() {
   return (
     <Router>
       <div className='App'>
         <UserProvider>
-          <Routes>
-            {privateRouter.map((route, index) => {
-              const Page = route.component;
-              return (
-                <Route
-                  key={index}
-                  path={route.path}
-                  element={
-                    <ProtectedRoute>
-                      <Page />
-                    </ProtectedRoute>
-                  }
-                />
-              );
-            })}
-            {publicRouter.map((route, index) => {
-              const Page = route.component;
-              return <Route key={index} path={route.path} element={<Page />} />;
-            })}
-            <Route path='*' element={<Error />} />
-          </Routes>
+          <NoteProvider>
+            <Routes>
+              {privateRouter.map((route, index) => {
+                const Page = route.component;
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={
+                      <ProtectedRoute>
+                        <Page />
+                      </ProtectedRoute>
+                    }
+                  />
+                );
+              })}
+              {publicRouter.map((route, index) => {
+                const Page = route.component;
+                return (
+                  <Route key={index} path={route.path} element={<Page />} />
+                );
+              })}
+              <Route path='*' element={<Error />} />
+            </Routes>
+          </NoteProvider>
         </UserProvider>
       </div>
     </Router>

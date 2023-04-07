@@ -88,5 +88,12 @@
 .btnLogout {
   margin: 0 12px;
   padding: 6px 20px;
-  background: var(--red-color);
+  background: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (width < 864px) {
+  .search {
+    display: none;
+  }
 }
